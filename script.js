@@ -28,7 +28,9 @@ $('main').append(data.map(([title, elements], index) => `
 				<div class="bg-white rounded-xl flex flex-col items-center p-6 pb-20 relative h-full" style="box-shadow: 0 4px 4px rgba(0, 0, 0, .25)" id="${name.toLowerCase().replace(/\s/g, "-")}">
 					<h3 class="font-extrabold text-lg mb-3">LEVEL ${level}</h3>
 					<div class="w-32 h-32 rounded-full bg-${COLORMAP[index]}" style="padding: .4em; box-shadow: inset 0 2px 6px rgba(0, 0, 0, .6)">
-						<div class="rounded-full overflow-hidden"><img src="${DOMAIN+img}" class="bg-white p-5" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .6)"></div>
+						<div class="rounded-full overflow-hidden" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .6)">
+							<img src="${DOMAIN+img}" class="bg-white p-5">
+						</div>
 					</div>
 					<h2 class="font-extrabold text-3xl pt-4 text-center leading-tight">${name}</h2>
 					<div class="font-extrabold flex items-center mt-1"><img src="https://www.scbuildit.hubsinfo.net/images/icons/misc-icons/currency_coins.png" class="w-5 mr-1">${maxVal}</div>
@@ -39,8 +41,8 @@ $('main').append(data.map(([title, elements], index) => `
 							${e.map(([i, , n]) => `
 							<div class="flex items-center justify-center w-12 h-12 mx-1 rounded-full bg-${COLORMAP[getCMAPIndex(n)]}" style="box-shadow: inset 0 2px 6px rgba(0, 0, 0, .6)">
 								<a href="#${getReplaced(n).replace(/\s/g, "-").toLowerCase()}">
-									<div class="rounded-full overflow-hidden">
-										<img src="${DOMAIN+i}" class="bg-white  p-2 w-10 h-10" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .6)">
+									<div class="rounded-full overflow-hidden" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .6)">
+										<img src="${DOMAIN+i}" class="bg-white  p-2 w-10 h-10">
 									</div>
 								</a>
 							</div>
