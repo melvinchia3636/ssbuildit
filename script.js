@@ -11,7 +11,7 @@ $('main').append(data.map(([title, elements], index) => `
 		<h1 class="text-center font-extrabold text-4xl mb-8">${title}</h1>
 		<div class="grid items-center justify-center gap-5 mb-32 px-20" style="grid-template-columns: repeat(auto-fill, minmax(18em, 1fr)); grid-auto-rows: 1fr">
 			${elements.map(([img, name, level, time, maxVal, mats, used, desc]) => `
-				<div class="bg-white rounded-xl flex flex-col items-center p-6 relative h-full" style="box-shadow: 0 4px 4px rgba(0, 0, 0, .25)">
+				<div class="bg-white rounded-xl flex flex-col items-center p-6 pb-20 relative h-full" style="box-shadow: 0 4px 4px rgba(0, 0, 0, .25)">
 					<h3 class="font-extrabold text-lg mb-3">LEVEL ${level}</h3>
 					<div class="w-32 h-32 rounded-full bg-${COLORMAP[index]}" style="padding: .4em; box-shadow: inset 0 2px 6px rgba(0, 0, 0, .6)"><img src="${DOMAIN+img}" class="bg-white rounded-full p-5" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .6)"></div>
 					<h2 class="font-extrabold text-3xl pt-4 text-center leading-tight">${name}</h2>
