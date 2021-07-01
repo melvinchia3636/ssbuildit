@@ -1,9 +1,23 @@
 const DOMAIN = "https://www.scbuildit.hubsinfo.net";
-const COLORMAP = ["gray-500", "orange-500", "indigo-500", "green-300", "yellow-800", "green-500", "pink-500", "purple-300", "yellow-400", "blue-500", , , , , , , , "teal-400"]
+const COLORMAP = ["gray-500", "orange-500", "indigo-500", "green-300", "yellow-800", "green-500", "pink-500", "purple-300", "yellow-400", "blue-500", '', '', '', '', '', '', '', "teal-400"]
+
+const REPLACEMENT = [
+	[/Bread$/, "Bread Roll"],
+	["Bags", "Bag"],
+	['Fruit Berries', 'Fruit and Berries'],
+	["Tables", "Table"],
+	["Fruits and Berries", "Fruit and Berries"],
+	["Back Pack", "Backpack"]
+];
+
+const getReplaced = str => {
+	REPLACEMENT.forEach(([o, r]) => str = str.replace(o, r));
+	return str
+}
 
 const getCMAPIndex = name => {
-	const index = data.map(e => e[1].some(e => e[1] === name.replace('Bread', "Bread Roll").replace("Bags", "Bag").replace('Fruit Berries', 'Fruit and Berries'))).indexOf(true)
-	return index !== -1 ? index : console.log(name)
+	const index = data.map(e => e[1].some(e => e[1] === getReplaced(name))).indexOf(true)
+	return index !== -1 ? index : console.log(getReplaced(name))
 }
 
 $('main').append(data.map(([title, elements], index) => `
@@ -22,9 +36,9 @@ $('main').append(data.map(([title, elements], index) => `
 					${[mats, used].map(e => elements.map(() => e.length > 0).some(e => e) ? `
 						<h3 class="font-extrabold text-lg mb-3 mt-4">Used In</h3>
 						<div class="flex">
-							${e.map(([i, a, n]) => `
+							${e.map(([i, , n]) => `
 							<div class="flex items-center justify-center w-12 h-12 mx-1 rounded-full bg-${COLORMAP[getCMAPIndex(n)]}" style="box-shadow: inset 0 2px 6px rgba(0, 0, 0, .6)">
-								<a href="#${n.replace('Bread', "Bread Roll").replace("Bags", "Bag").replace('Fruit Berries', 'Fruit and Berries').replace(/\s/g, "-").toLowerCase()}">
+								<a href="#${getReplaced(n).replace(/\s/g, "-").toLowerCase()}">
 									<div class="rounded-full overflow-hidden">
 										<img src="${DOMAIN+i}" class="bg-white  p-2 w-10 h-10" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .6)">
 									</div>
