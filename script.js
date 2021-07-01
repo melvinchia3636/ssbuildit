@@ -9,7 +9,7 @@ const getCMAPIndex = name => {
 $('main').append(data.map(([title, elements], index) => `
 	<div>
 		<h1 class="text-center font-extrabold text-4xl mb-8">${title}</h1>
-		<div class="grid items-center justify-center gap-5 mb-32 px-20" style="grid-template-columns: repeat(4, 25%)">
+		<div class="grid items-center justify-center gap-5 mb-32 px-20" style="grid-template-columns: repeat(auto-fill, minmax(20%, 1fr))">
 			${elements.map(([img, name, level, time, maxVal, mats, used, desc]) => `
 				<div class="bg-white rounded-xl flex flex-col items-center p-6 relative" style="box-shadow: 0 4px 4px rgba(0, 0, 0, .25); height: ${elements.map(e => e[5].length > 0).some(e => e) ? "40em" : "28em"}">
 					<h3 class="font-extrabold text-lg mb-3">LEVEL ${level}</h3>
