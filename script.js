@@ -1,4 +1,4 @@
-const DOMAIN = "https://www.scbuildit.hubsinfo.net";
+const DOMAIN = "https://scbuildit.hubsinfo.net";
 const COLORMAP = ["gray-500", "orange-500", "indigo-500", "green-300", "yellow-800", "green-500", "pink-500", "purple-300", "yellow-400", "blue-500", '', '', '', '', '', '', '', "teal-400"]
 
 const REPLACEMENT = [
