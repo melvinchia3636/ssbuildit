@@ -33,7 +33,7 @@ $('main').append(data.map(([title, elements], index) => `
 						</div>
 					</div>
 					<h2 class="font-extrabold text-3xl pt-4 text-center leading-tight">${name}</h2>
-					<div class="font-extrabold flex items-center mt-1"><img src="https://www.scbuildit.hubsinfo.net/images/icons/misc-icons/currency_coins.png" class="w-5 mr-1">${maxVal}</div>
+					<div class="font-extrabold flex items-center mt-1"><img src="https://scbuildit.hubsinfo.net/images/icons/misc-icons/currency_coins.png" class="w-5 mr-1">${maxVal}</div>
 					<p class="font-bold text-xl text-center mt-5 text-gray-900 leading-tight">${desc}</p>
 					${[mats, used].map(e => elements.map(() => e.length > 0).some(e => e) ? `
 						<h3 class="font-extrabold text-lg mb-3 mt-4">Used In</h3>
